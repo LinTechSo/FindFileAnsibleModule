@@ -2,7 +2,7 @@
 
 - hosts: localhost
   tasks:
-    - name: FindFile
+    - name: use my FindFile module to find given file formats and put them in given dir
       FindFile: src=/opt/test/ dest=/tmp/ formats={{ item }}
       with_items:
         - ".txt"
