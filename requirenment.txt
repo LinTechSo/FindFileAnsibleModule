@@ -1,0 +1,4 @@
+pytest-shutil
+ansible
+progress
+bar

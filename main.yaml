@@ -1,0 +1,12 @@
+---
+
+- hosts: localhost
+  tasks:
+    - name: FindFile
+      FindFile: src=/opt/test/ dest=/tmp/ formats={{ item }}
+      with_items:
+        - ".txt"
+        - ".yml"
+      register: result
+    - debug: var=result
+
