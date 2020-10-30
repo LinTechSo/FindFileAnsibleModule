@@ -96,7 +96,7 @@ def StartFunc(src, dest, formats):
                 bar.next()
     return res
     fp.close()
-
+# main body
 def main():
     fields = { 
         "src": { "requierd": True, "type": "str" },
@@ -108,6 +108,7 @@ def main():
     dest = os.path.expanduser(module.params['dest'])
     formats = os.path.expanduser(module.params['formats'])
     result = StartFunc(src,dest,formats)
+    #show result
     module.exit_json(**result)
 
 if __name__ == '__main__':
@@ -115,3 +116,4 @@ if __name__ == '__main__':
         os.mkdir('./logs')
         os.mknod("./logs/log.txt")
     main()
+    shutil.rmtree('./logs', ignore_errors=True)
