@@ -20,7 +20,8 @@ DOCUMENTATION = '''
 ---
 module: FindFile
 author: Parham Zardoshti (@scietechso)
-short_description: FindFile module find given file formats in src directory (recursively) and put them in given destination directory
+short_description: to find all files that we have specified with file formats in src directory (recursively) and put them in given destination directory
+
 description:
     - FindFile module can Find Files with given formats like .exe, txt, mp4, etc and backup them into given directory.
     - More examples at U(https://github.com/lintechso/AnsibleModule)
