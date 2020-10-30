@@ -109,12 +109,15 @@ def main():
     dest = os.path.expanduser(module.params['dest'])
     formats = os.path.expanduser(module.params['formats'])
     result = StartFunc(src,dest,formats)
+    os.system("rm -rf ./logs/")
     #show result
     module.exit_json(**result)
+    
 
 if __name__ == '__main__':
     if not os.path.exists('./logs'):
         os.mkdir('./logs')
         os.mknod("./logs/log.txt")
     main()
-    shutil.rmtree('./logs', ignore_errors=True)
+    
+    

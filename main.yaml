@@ -3,7 +3,7 @@
 - hosts: localhost
   tasks:
     - name: Find all *.txt and *.yml in /opt/test and its subdirecotories recursively for Backups
-      FindFile: src=/opt/test/ dest=/tmp/ formats={{ item }}
+      FindFile: src=/home/parham dest=/tmp/ formats={{ item }}
       with_items:
         - ".txt"
         - ".yml"
