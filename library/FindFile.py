@@ -20,7 +20,7 @@ DOCUMENTATION = '''
 ---
 module: FindFile
 author: Parham Zardoshti (@scietechso)
-short_description: Diff compare strings, files or command outputs
+short_description: FindFile module find given file formats in src directory (recursively) and put them in given destination directory
 description:
     - FindFile module can Find Files with given formats like .exe, txt, mp4, etc and backup them into given directory.
     - More examples at U(https://github.com/lintechso/AnsibleModule)
@@ -30,15 +30,13 @@ EXAMPLES = '''
 # Find Files with given formats and copy them to given destination
 - hosts: localhost
   tasks:
-    - name: FindFile
+    - name: Find *.txt and *.yml in /opt/test for Backups
       FindFile: src=/opt/test/ dest=/tmp/ formats={{ item }}
       with_items:
         - ".txt"
-        - ".yaml"
         - ".yml"
       register: result
-    - debug: var=result
-'''
+    - debug: var=result'''
 # FindFile dependencies
 from ansible.module_utils.basic import *
 from progress.spinner import Spinner
