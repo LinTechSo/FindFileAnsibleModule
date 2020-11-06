@@ -42,7 +42,6 @@ EXAMPLES = '''
 from ansible.module_utils.basic import *
 from progress.spinner import Spinner
 from progress.bar import Bar
-from argparse import ArgumentParser
 import os, sys, shutil
 
 def FindFiles(path,extensions):
@@ -109,6 +108,7 @@ def main():
     dest = os.path.expanduser(module.params['dest'])
     formats = os.path.expanduser(module.params['formats'])
     result = StartFunc(src,dest,formats)
+    #remove cnt
     os.system("rm -rf ./logs/")
     #show result
     module.exit_json(**result)
